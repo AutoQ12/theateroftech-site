@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theater of Tech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#0a0e14;--panel:#10161f;--panel-2:#161e2a;--line-dark:#212c3a;
+  --ink-light:#e9edf2;--ink-dim:#8a98a8;
+  --paper:#f6f5f1;--paper-2:#ffffff;--ink:#101418;--ink-soft:#48535f;--line:#e2ded4;
+  --europe:#4c7df0;--accent-orange:#ff6b35;--china:#e5484d;--mideast:#d99a3c;--unmanned:#12b3a6;--contact:#9b6cf0;
+  --grid:rgba(120,140,160,.07);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Newsreader',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+
+/* BOOT */
+.boot{position:fixed;inset:0;background:var(--void);z-index:999;display:flex;align-items:center;justify-content:center;animation:bootout 1.1s .5s forwards}
+.boot .bg{font-family:'Space Mono',monospace;font-weight:700;font-size:2rem;color:var(--void);background:var(--accent-orange);padding:14px 20px;letter-spacing:.05em;animation:bootpulse 1.6s ease infinite}
+.boot .scan{position:absolute;left:0;right:0;height:2px;background:var(--unmanned);box-shadow:0 0 14px var(--unmanned);animation:bootscan 1.4s ease-in-out}
+@keyframes bootout{to{opacity:0;visibility:hidden}}
+@keyframes bootpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes bootscan{0%{top:0}100%{top:100%}}
+
+/* HEADER */
+.command{background:var(--void);color:var(--ink-light);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;border-bottom:1px solid var(--line-dark);position:sticky;top:0;z-index:100;animation:slidedown .6s .9s both}
+@keyframes slidedown{from{transform:translateY(-100%);opacity:0}to{transform:none;opacity:1}}
+.command-bar{max-width:1200px;margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{display:flex;align-items:baseline;gap:11px;flex-shrink:0}
+.brand-glyph{font-family:'Space Mono',monospace;font-weight:700;font-size:.62rem;color:var(--void);background:var(--accent-orange);padding:3px 6px;letter-spacing:.05em;position:relative;top:-3px}
+.brand-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:-.025em;color:#fff}
+.brand-name em{font-style:normal;color:var(--accent-orange)}
+.head-right{display:flex;align-items:center;gap:16px;min-width:0}
+.latest{display:flex;align-items:center;gap:10px;max-width:330px;min-width:0}
+.latest-label{font-family:'Space Mono',monospace;font-weight:700;font-size:.6rem;letter-spacing:.1em;color:var(--unmanned);display:flex;align-items:center;gap:6px;flex-shrink:0}
+.latest-label .pulse{width:6px;height:6px;border-radius:50%;background:var(--unmanned);animation:pulse 1.4s infinite}
+.latest-head{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--ink-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:opacity .4s,transform .4s}
+.latest-head.swap{opacity:0;transform:translateY(-6px)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.2}}
+.search{display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line-dark);border-radius:2px;padding:7px 11px;transition:.2s;flex-shrink:0}
+.search:focus-within{border-color:var(--unmanned);box-shadow:0 0 0 3px rgba(18,179,166,.15)}
+.search svg{width:14px;height:14px;stroke:var(--ink-dim);flex-shrink:0}
+.search input{background:none;border:none;outline:none;color:var(--ink-light);font-family:'Space Grotesk',sans-serif;font-size:.8rem;width:130px}
+.search input::placeholder{color:var(--ink-dim)}
+.sector-nav{border-top:1px solid var(--line-dark);max-width:1200px;margin:0 auto;padding:0 28px;display:flex;gap:2px;overflow-x:auto}
+.sector-nav button{background:none;border:none;cursor:pointer;color:var(--ink-dim);font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.03em;padding:13px 15px;white-space:nowrap;border-bottom:2px solid transparent;transition:color .18s,border-color .18s;display:flex;gap:8px;align-items:center}
+.sector-nav button .dot{width:7px;height:7px;border-radius:50%;transition:transform .18s}
+.sector-nav button:hover{color:var(--ink-light)}
+.sector-nav button:hover .dot{transform:scale(1.5)}
+.sector-nav button.active{color:#fff;border-bottom-color:currentColor}
+
+/* TICKER */
+.ticker{background:var(--panel);border-bottom:1px solid var(--line-dark);display:flex;align-items:center;overflow:hidden;animation:fade .6s 1.1s both}
+.ticker-tag{font-family:'Space Mono',monospace;font-weight:700;font-size:.64rem;background:var(--unmanned);color:var(--void);padding:7px 11px;letter-spacing:.12em;display:flex;align-items:center;gap:6px;flex-shrink:0}
+.ticker-tag .pulse{width:6px;height:6px;border-radius:50%;background:var(--void);animation:pulse 1.4s infinite}
+.ticker-track{white-space:nowrap;font-family:'Space Mono',monospace;font-size:.72rem;color:var(--ink-dim);padding-left:100%;animation:scroll 40s linear infinite}
+.ticker-track span{margin-right:48px}.ticker-track b{color:var(--ink-light);font-weight:400}
+@keyframes scroll{to{transform:translateX(-100%)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+/* HERO SLIDER */
+.hero-zone{background:var(--void);padding:34px 0 46px;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;animation:fadeUp .7s 1.2s both}
+.slider{position:relative;height:480px;border:1px solid var(--line-dark);overflow:hidden}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease;display:flex;align-items:flex-end}
+.slide.on{opacity:1}
+.slide-photo{position:absolute;inset:0;background-size:cover;background-position:center}
+.slide-photo::after{content:"FILE PHOTO";position:absolute;top:14px;right:14px;font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.12em;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.25);padding:3px 7px}
+.slide-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,14,20,.94) 0%,rgba(10,14,20,.7) 45%,rgba(10,14,20,.15) 100%)}
+.slide-body{position:relative;padding:0 72px 46px 96px;max-width:680px}
+.slide-meta{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.sector-chip{font-family:'Space Mono',monospace;font-weight:700;font-size:.62rem;letter-spacing:.1em;padding:4px 9px;color:var(--void)}
+.stamp{font-family:'Space Mono',monospace;font-size:.64rem;color:var(--ink-dim);letter-spacing:.04em}
+.slide h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:2.5rem;line-height:1.05;letter-spacing:-.03em;color:#fff;margin-bottom:14px}
+.slide p{font-size:1.1rem;color:#c4ccd6;max-width:48ch;margin-bottom:18px}
+.slide .read{display:inline-flex;align-items:center;gap:9px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.82rem;color:#fff;border-bottom:2px solid currentColor;padding-bottom:3px}
+.s-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border:1px solid var(--line-dark);background:rgba(10,14,20,.6);color:#fff;cursor:pointer;font-size:1.3rem;display:flex;align-items:center;justify-content:center;transition:.2s;z-index:5}
+.s-nav:hover{background:var(--accent-orange);border-color:var(--accent-orange);color:var(--void)}
+.s-prev{left:14px}.s-next{right:14px}
+.s-dots{position:absolute;bottom:20px;right:56px;display:flex;gap:8px;z-index:5}
+.s-dots button{width:30px;height:4px;border:none;background:rgba(255,255,255,.3);cursor:pointer;padding:0;transition:.25s}
+.s-dots button.on{background:#fff;width:46px}
+
+/* FEED */
+.feed{padding:50px 0 30px;background:var(--paper)}
+.feed-head{display:flex;align-items:flex-end;justify-content:space-between;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:34px;gap:16px}
+.feed-head h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:-.02em}
+.feed-head .count{font-family:'Space Mono',monospace;font-size:.72rem;color:var(--ink-soft);white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.card{background:var(--paper-2);border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;animation:fadeUp .5s cubic-bezier(.2,.7,.2,1) both}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(16,20,24,.1)}
+.card-photo{aspect-ratio:16/10;position:relative;border-bottom:1px solid var(--line);background-size:cover;background-position:center}
+.card-photo::after{content:"FILE PHOTO";position:absolute;bottom:10px;left:12px;font-family:'Space Mono',monospace;font-size:.54rem;letter-spacing:.1em;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.25);padding:2px 6px}
+.card-body{padding:20px 20px 24px;flex:1;display:flex;flex-direction:column}
+.card-meta{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.card h3{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.18rem;line-height:1.18;letter-spacing:-.015em;margin-bottom:10px}
+.card p{font-size:1rem;color:var(--ink-soft);flex:1}
+.card .foot{margin-top:16px;font-family:'Space Mono',monospace;font-size:.66rem;color:var(--ink-soft);letter-spacing:.04em;display:flex;justify-content:space-between}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.no-results{padding:60px 0;text-align:center;font-family:'Space Mono',monospace;color:var(--ink-soft)}
+
+/* CONTACT */
+.contact{animation:fadeUp .5s both;padding-bottom:10px}
+.contact-intro{max-width:640px;margin-bottom:34px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.14em;color:var(--contact);font-weight:700}
+.contact-intro h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:2.4rem;letter-spacing:-.025em;margin:10px 0 12px}
+.contact-intro p{font-size:1.15rem;color:var(--ink-soft)}
+.contact-cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.contact-card{background:var(--paper-2);border:1px solid var(--line);border-left:3px solid var(--contact);padding:28px}
+.cc-tag{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.12em;color:var(--contact);font-weight:700}
+.contact-card h3{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.45rem;letter-spacing:-.01em;margin:10px 0 8px}
+.contact-card p{font-size:1.02rem;color:var(--ink-soft);margin-bottom:20px}
+.cc-mail{display:inline-flex;align-items:center;gap:9px;background:var(--void);color:#fff;padding:11px 16px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.85rem;transition:.2s;border:1px solid var(--void)}
+.cc-mail svg{width:15px;height:15px;stroke:currentColor;fill:none}
+.cc-mail:hover{background:var(--contact);border-color:var(--contact)}
+
+/* FOOTER */
+.foot-zone{background:var(--void);color:var(--ink-light);margin-top:50px;padding:48px 0 40px;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap}
+.foot-zone .brand-name{font-size:1.3rem}
+.foot-tag{color:var(--ink-dim);max-width:46ch;margin-top:12px;font-size:.98rem}
+.foot-sectors{display:flex;flex-wrap:wrap;gap:18px}
+.foot-sectors a{font-family:'Space Grotesk',sans-serif;font-size:.8rem;color:var(--ink-dim);display:flex;align-items:center;gap:7px}
+.foot-sectors a:hover{color:var(--ink-light)}.foot-sectors .dot{width:7px;height:7px;border-radius:50%}
+.foot-rule{border:none;border-top:1px solid var(--line-dark);margin:30px 0 18px}
+.foot-bottom{font-family:'Space Mono',monospace;font-size:.66rem;color:var(--ink-dim);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;letter-spacing:.04em}
+
+@media(max-width:1040px){.latest{display:none}}
+@media(max-width:920px){.grid{grid-template-columns:repeat(2,1fr)}.slide h1{font-size:1.9rem}.slider{height:430px}.contact-cards{grid-template-columns:1fr}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.search input{width:84px}.slide-body{padding:0 24px 64px 64px}.slide h1{font-size:1.6rem}.s-dots{right:24px}.contact-intro h2{font-size:1.8rem}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition:none!important}.ticker-track{padding-left:0}.boot{display:none}}
+:focus-visible{outline:2px solid var(--unmanned);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<div class="boot" id="boot"><div class="bg">T/T</div><div class="scan"></div></div>
+
+<header class="command">
+  <div class="command-bar">
+    <a href="/" class="brand"><span class="brand-glyph">T/T</span><span class="brand-name">Theater of <em>Tech</em></span></a>
+    <div class="head-right">
+      <div class="latest"><span class="latest-label"><span class="pulse"></span>LATEST</span><span class="latest-head" id="latestHead"></span></div>
+      <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input id="search" type="text" placeholder="Search the theater…" autocomplete="off"></div>
+    </div>
+  </div>
+  <nav class="sector-nav" id="nav"></nav>
+</header>
+
+<div class="ticker">
+  <div class="ticker-tag"><span class="pulse"></span>LIVE</div>
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<section class="hero-zone" id="heroZone">
+  <div class="wrap">
+    <div class="slider" id="slider">
+      <div id="slides"></div>
+      <button class="s-nav s-prev" id="prev" aria-label="Previous">‹</button>
+      <button class="s-nav s-next" id="next" aria-label="Next">›</button>
+      <div class="s-dots" id="dots"></div>
+    </div>
+  </div>
+</section>
+
+<section class="feed">
+  <div class="wrap">
+    <div class="feed-head" id="feedHead"><h2 id="feed-title">Latest across all sectors</h2><span class="count" id="feed-count"></span></div>
+    <div id="grid"></div>
+  </div>
+</section>
+
+<footer class="foot-zone">
+  <div class="wrap">
+    <div class="foot-top">
+      <div><div class="brand"><span class="brand-glyph">T/T</span><span class="brand-name">Theater of <em>Tech</em></span></div>
+      <p class="foot-tag">Daily coverage of military technology, unmanned systems, and dual-use innovation — across Europe, America, China, the Middle East, and beyond.</p></div>
+      <div class="foot-sectors" id="footSectors"></div>
+    </div>
+    <hr class="foot-rule">
+    <div class="foot-bottom"><span>© 2026 THEATER OF TECH · theateroftech.com</span><span>AUTOMATED SWEEP 0900 CET · HUMAN-VERIFIED</span></div>
+  </div>
+</footer>
+
+<script>
+const SECTORS = {"europe": {"label": "Europe", "code": "SEC-01", "color": "#4c7df0"}, "america": {"label": "America", "code": "SEC-02", "color": "#5aa469"}, "china": {"label": "China", "code": "SEC-03", "color": "#e5484d"}, "middle_east": {"label": "Middle East", "code": "SEC-04", "color": "#d99a3c"}, "unmanned": {"label": "Unmanned Vehicles", "code": "SEC-05", "color": "#12b3a6"}};
+const ARTICLES = [{"s": "middle_east", "t": "Fiber-Optic FPV Drones Reach Southern Lebanon, Challenging Israeli Forces", "d": "Hezbollah has deployed fiber-optic FPV drones in southern Lebanon, replicating Ukrainian battlefield technology to neutralise Israeli electronic warfare advantages.", "slug": "fiber-optic-fpv-drones-reach-southern-lebanon-challenging-israeli-forces", "track": "0x0F", "time": "23:00", "date": "25 JUN 2026", "banner": ""}, {"s": "middle_east", "t": "Hezbollah Deploys Fiber-Optic FPV Drones in Lebanon, Exposing Israeli Vulnerabilities", "d": "Fiber-optic guided drones immune to jamming have emerged in southern Lebanon, marking a significant tactical shift in Hezbollah's campaign against Israeli forces.", "slug": "hezbollah-deploys-fiber-optic-fpv-drones-in-lebanon-exposing-israeli-vulnerabili", "track": "0x0A", "time": "23:38", "date": "23 JUN 2026", "banner": ""}, {"s": "middle_east", "t": "AI-Guided Shaheds: Ukraine Warns of Autonomous Strike Drone Targeting Era", "d": "A senior Ukrainian drone warfare advisor says the next generation of loitering munitions like Russia's Shahed will autonomously identify and select their own targets using AI, marking a critical escalation in drone warfare.", "slug": "ai-guided-shaheds-ukraine-warns-of-autonomous-strike-drone-targeting-era", "track": "0x13", "time": "21:29", "date": "26 JUN 2026", "banner": "/static/images/16/16f57c91ed55b12e935c78e6306ececd275317130b83123a29b9902375b5b40f.jpg"}, {"s": "america", "t": "F-35 Sustainability Crisis and Iran War Costs Strain Pentagon Budgets", "d": "The F-35 program's top officer admits the fleet has outgrown its supply chain, while an $87.6 billion Iran war supplemental and inter-service budget fights expose deepening U.S. defense affordability pressures.", "slug": "f-35-sustainability-crisis-and-iran-war-costs-strain-pentagon-budgets", "track": "0x12", "time": "21:28", "date": "26 JUN 2026", "banner": "/static/images/26/26f2510c0cb8edfa3eed909b95741833de3f869d842702c09affb68cc8b2a6a2.jpg"}, {"s": "europe", "t": "Kawasaki and Airbus Partner to Develop Eurodrone ASW Variant for Japan", "d": "Kawasaki Heavy Industries and Airbus have signed an MOU to explore an anti-submarine warfare derivative of the Eurodrone MALE UAV tailored for Japan's maritime requirements.", "slug": "kawasaki-and-airbus-partner-to-develop-eurodrone-asw-variant-for-japan", "track": "0x11", "time": "19:09", "date": "26 JUN 2026", "banner": ""}, {"s": "unmanned", "t": "UK Advances Project Brakestop With \u00a345M for Three Long-Range Strike Drones for Ukraine", "d": "The UK MoD has awarded three companies roughly \u00a345 million to advance development of low-cost, 500km-range one-way attack weapons under Project Brakestop, with live trials in Ukraine planned.", "slug": "uk-advances-project-brakestop-with-45m-for-three-long-range-strike-drones-for-uk", "track": "0x10", "time": "23:00", "date": "25 JUN 2026", "banner": ""}, {"s": "unmanned", "t": "Japan Procures Australian Drone40 Loitering Munition for Island Defense", "d": "Japan's Ground Self-Defense Force has selected DefendTex's Drone40 loitering munition for short-range strike missions, with deliveries through Japanese trading firm Marubeni Aerospace expected by May 2027.", "slug": "japan-procures-australian-drone40-loitering-munition-for-island-defense", "track": "0x14", "time": "21:30", "date": "26 JUN 2026", "banner": "/static/images/1f/1f379b9439fb7dc28de6ced77c55b82244b87e904088ad77b00755476eaede9a.jpg"}, {"s": "europe", "t": "Poland Acquires Shield AI V-BAT Drones for Baltic Sea Naval Operations", "d": "Warsaw has contracted California-based Shield AI to supply V-BAT unmanned systems to the Polish Navy, deepening U.S.-Polish defense ties as Poland eyes a role in Shield AI's autonomous X-BAT fighter jet programme.", "slug": "poland-acquires-shield-ai-v-bat-drones-for-baltic-sea-naval-operations", "track": "0x0C", "time": "23:01", "date": "25 JUN 2026", "banner": ""}, {"s": "america", "t": "U.S. Transfers Four Ocean Aero Triton Surveillance Drones to Philippines Navy", "d": "Washington has handed over four dual-mode autonomous underwater and surface vehicles to Manila in a $13 million deal aimed at countering Chinese activity in the Philippine EEZ.", "slug": "us-transfers-four-ocean-aero-triton-surveillance-drones-to-philippines-navy", "track": "0x0D", "time": "23:00", "date": "25 JUN 2026", "banner": ""}, {"s": "china", "t": "China's J-35 Copies F-35 Hardware but Misses the Software Edge, Analysts Warn", "d": "A new analysis argues China's stealth aviation program has replicated the physical form of U.S. fifth-generation fighters while failing to absorb the software-defined adaptability that makes them truly capable.", "slug": "chinas-j-35-copies-f-35-hardware-but-misses-the-software-edge-analysts-warn", "track": "0x0E", "time": "23:00", "date": "25 JUN 2026", "banner": ""}, {"s": "america", "t": "US Transfers Ocean Aero Triton Drone Boats to Philippines to Counter China", "d": "Washington has handed over four autonomous sailing and diving surveillance drones to Manila, boosting the Philippines' ability to monitor Chinese activity inside its exclusive economic zone.", "slug": "us-transfers-ocean-aero-triton-drone-boats-to-philippines-to-counter-china", "track": "0x08", "time": "23:37", "date": "23 JUN 2026", "banner": ""}, {"s": "europe", "t": "European Defence Tech Draws Record VC Inflows as Drone Autonomy Trials Advance", "d": "Venture capital flowing into defence technology has surpassed $12 billion globally, with European start-ups and autonomous drone programmes increasingly attracting investor and military attention.", "slug": "european-defence-tech-draws-record-vc-inflows-as-drone-autonomy-trials-advance", "track": "0x07", "time": "23:37", "date": "23 JUN 2026", "banner": ""}, {"s": "china", "t": "China's PLA Drone Arsenal: HALE UAVs, Stealth Systems, and A2/AD Strategy", "d": "A congressional commission review details how China's defense industry has built a broad portfolio of advanced unmanned systems designed to challenge U.S. stealth assets and extend PLA reach across the Indo-Pacific.", "slug": "chinas-pla-drone-arsenal-hale-uavs-stealth-systems-and-a2ad-strategy", "track": "0x09", "time": "23:38", "date": "23 JUN 2026", "banner": ""}, {"s": "unmanned", "t": "Teledyne FLIR 'First Look' Throwable Ground Drone Controlled by Black Hornet System", "d": "Teledyne FLIR has unveiled a rugged, throwable tracked ground drone that shares its control architecture with the company's established Black Hornet miniature aerial platform.", "slug": "teledyne-flir-first-look-throwable-ground-drone-controlled-by-black-hornet-syste", "track": "0x0B", "time": "23:39", "date": "23 JUN 2026", "banner": ""}, {"s": "europe", "t": "CSG and FNSS Launch Danube Defence Systems to Arm the Balkans", "d": "A new joint venture between Croatian firm CSG and Turkish manufacturer FNSS will produce armoured vehicles \u2014 including a medium tank \u2014 in Europe, targeting Balkan and regional defence markets.", "slug": "csg-and-fnss-launch-danube-defence-systems-to-arm-the-balkans", "track": "0x02", "time": "23:03", "date": "23 JUN 2026", "banner": ""}, {"s": "europe", "t": "Defence Tech VC Funding Tops $12bn as European Startups Chase US Giants", "d": "A surge in venture capital flowing into defence technology has already surpassed last year's full-year total, with European firms competing for a share of a market dominated by billion-dollar US raises.", "slug": "defence-tech-vc-funding-tops-12bn-as-european-startups-chase-us-giants", "track": "0x01", "time": "23:03", "date": "23 JUN 2026", "banner": ""}, {"s": "middle_east", "t": "Turkey's Kizilelma UCAV Completes Crewed-Uncrewed Teaming Trials With M-346 Jet", "d": "Baykar's combat drone has conducted autonomous formation flight alongside a Leonardo M-346 trainer jet, placing Turkey among a handful of nations pursuing advanced crewed-uncrewed teaming capabilities.", "slug": "turkeys-kizilelma-ucav-completes-crewed-uncrewed-teaming-trials-with-m-346-jet", "track": "0x03", "time": "23:03", "date": "23 JUN 2026", "banner": ""}];
+const INITIAL_SECTOR = "all";
+const CONTACT_MAIL = "theateroftechnews@gmail.com";
+
+function sec(k){return SECTORS[k] || {label:(k||'News'),code:'SEC-00',color:'#3a4759'};}
+function tint(sector){const c=sec(sector).color;return `background:linear-gradient(125deg,${c}38 0%,#0c1117 62%),radial-gradient(circle at 78% 30%,${c}30,transparent 55%),#0c1117`;}
+function photo(a){
+  if(a.banner){return `background-image:linear-gradient(90deg,rgba(10,14,20,.45),rgba(10,14,20,.15)),url('${a.banner}')`;}
+  return tint(a.s);
+}
+
+let currentSector = (INITIAL_SECTOR && (INITIAL_SECTOR==='all' || INITIAL_SECTOR==='contact' || SECTORS[INITIAL_SECTOR])) ? INITIAL_SECTOR : 'all';
+let query='';
+
+/* ---- NAV + FOOTER (built from real sections) ---- */
+function buildChrome(){
+  const nav=document.getElementById('nav');
+  nav.innerHTML =
+    `<button data-sector="all">ALL SECTORS</button>` +
+    Object.entries(SECTORS).map(([k,v])=>`<button data-sector="${k}"><span class="dot" style="background:${v.color}"></span>${v.label.toUpperCase()}</button>`).join('') +
+    `<button data-sector="contact">CONTACT US</button>`;
+  const foot=document.getElementById('footSectors');
+  foot.innerHTML =
+    Object.entries(SECTORS).map(([k,v])=>`<a href="/section/${k}"><span class="dot" style="background:${v.color}"></span>${v.label}</a>`).join('') +
+    `<a href="#contact" data-sector="contact"><span class="dot" style="background:var(--contact)"></span>Contact Us</a>`;
+}
+
+/* ---- TICKER ---- */
+function buildTicker(){
+  const t=document.getElementById('tickerTrack');
+  if(!ARTICLES.length){t.innerHTML='<span><b>STANDBY</b> — awaiting first published reports</span>';return;}
+  t.innerHTML = ARTICLES.slice(0,8).map(a=>`<span><b>${sec(a.s).label.toUpperCase()}</b> — ${a.t}</span>`).join('');
+}
+
+/* ---- SLIDER (section-aware) ---- */
+let slideData=[],slideIdx=0,slideTimer=null;
+function buildSlider(sector){
+  slideData = sector==='all' ? ARTICLES.slice(0,5) : ARTICLES.filter(a=>a.s===sector).slice(0,5);
+  slideIdx=0;
+  const hero=document.getElementById('heroZone');
+  if(!slideData.length){hero.style.display='none';stopAuto();return;}
+  hero.style.display='';
+  const slides=document.getElementById('slides'),dots=document.getElementById('dots');
+  slides.innerHTML=slideData.map((a,i)=>{const S=sec(a.s);return `<div class="slide${i===0?' on':''}" data-i="${i}">
+    <div class="slide-photo" style="${photo(a)}"></div><div class="slide-shade"></div>
+    <div class="slide-body"><div class="slide-meta"><span class="sector-chip" style="background:${S.color}">${S.code} ${S.label.toUpperCase()}</span><span class="stamp">${a.date} · ${a.time}</span></div>
+    <h1>${a.t}</h1><p>${a.d}</p><a href="/article/${a.slug}" class="read" style="color:${S.color}">Read briefing →</a></div></div>`;}).join('');
+  dots.innerHTML=slideData.map((_,i)=>`<button data-i="${i}" class="${i===0?'on':''}" aria-label="Slide ${i+1}"></button>`).join('');
+  startAuto();
+}
+function goTo(i){if(!slideData.length)return;slideIdx=(i+slideData.length)%slideData.length;document.querySelectorAll('.slide').forEach(s=>s.classList.toggle('on',+s.dataset.i===slideIdx));document.querySelectorAll('.s-dots button').forEach(d=>d.classList.toggle('on',+d.dataset.i===slideIdx));}
+function nextSlide(){goTo(slideIdx+1)}
+function startAuto(){stopAuto();if(slideData.length>1)slideTimer=setInterval(nextSlide,5500)}
+function stopAuto(){if(slideTimer)clearInterval(slideTimer)}
+
+/* ---- FEED ---- */
+function renderNews(sector){
+  const grid=document.getElementById('grid');grid.className='grid';
+  let list=sector==='all'?ARTICLES:ARTICLES.filter(a=>a.s===sector);
+  if(query)list=list.filter(a=>(a.t+' '+a.d).toLowerCase().includes(query));
+  if(!list.length){
+    grid.className='';
+    const msg = query ? '// NO TRACKS MATCH "'+query.toUpperCase()+'"' : '// NO REPORTS PUBLISHED YET — APPROVE DRAFTS IN TELEGRAM';
+    grid.innerHTML='<div class="no-results">'+msg+'</div>';count(0);return;
+  }
+  grid.innerHTML=list.map((a,i)=>{const S=sec(a.s);return `<a href="/article/${a.slug}" class="card" style="animation-delay:${i*.05}s">
+    <div class="card-photo" style="${photo(a)}"></div>
+    <div class="card-body"><div class="card-meta"><span class="sector-chip" style="background:${S.color}">${S.code} ${S.label.toUpperCase()}</span></div>
+    <h3>${a.t}</h3><p>${a.d}</p><div class="foot"><span>TRACK ${a.track}</span><span>${a.date} · ${a.time}</span></div></div></a>`;}).join('');
+  count(list.length);
+}
+function count(n){document.getElementById('feed-count').textContent=String(n).padStart(2,'0')+' reports';}
+
+function renderContact(){
+  document.getElementById('heroZone').style.display='none';
+  document.getElementById('feedHead').style.display='none';
+  const mail=CONTACT_MAIL;
+  const icon='<svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 6l9 7 9-7"/></svg>';
+  document.getElementById('grid').className='';
+  document.getElementById('grid').innerHTML=`<div class="contact">
+    <div class="contact-intro"><span class="eyebrow">// REACH THE NEWSROOM</span><h2>Contact Us</h2>
+    <p>Have a tip, a correction, or want to write for us? We read everything that comes in.</p></div>
+    <div class="contact-cards">
+      <div class="contact-card"><span class="cc-tag">TIPS · FEEDBACK · CONTRIBUTORS</span>
+      <h3>Talk to the team</h3>
+      <p>Reach out to us with tips, feedback, contributor opportunities, or just to say hi.</p>
+      <a class="cc-mail" href="mailto:${mail}">${icon}${mail}</a></div>
+      <div class="contact-card"><span class="cc-tag">SALES</span>
+      <h3>Sales inquiries</h3>
+      <p>For all sales inquiries, please email the team and we’ll get back to you promptly.</p>
+      <a class="cc-mail" href="mailto:${mail}">${icon}${mail}</a></div>
+    </div></div>`;
+}
+
+function setActiveNav(){document.querySelectorAll('#nav button').forEach(x=>x.classList.toggle('active',x.dataset.sector===currentSector));}
+
+function render(){
+  setActiveNav();
+  if(currentSector==='contact' && !query){stopAuto();renderContact();return;}
+  document.getElementById('feedHead').style.display='';
+  const s = currentSector==='contact' ? 'all' : currentSector;
+  buildSlider(s);
+  document.getElementById('feed-title').textContent = s==='all' ? 'Latest across all sectors' : 'Sector: '+sec(s).label;
+  renderNews(s);
+}
+
+buildChrome();
+buildTicker();
+
+document.getElementById('nav').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;currentSector=b.dataset.sector;query='';document.getElementById('search').value='';render();window.scrollTo({top:0,behavior:'smooth'});});
+document.getElementById('footSectors').addEventListener('click',e=>{const a=e.target.closest('a');if(!a||!a.dataset.sector)return;e.preventDefault();currentSector='contact';render();window.scrollTo({top:0,behavior:'smooth'});});
+document.getElementById('search').addEventListener('input',e=>{query=e.target.value.trim().toLowerCase();render();});
+document.getElementById('next').addEventListener('click',()=>{nextSlide();startAuto();});
+document.getElementById('prev').addEventListener('click',()=>{goTo(slideIdx-1);startAuto();});
+document.getElementById('dots').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;goTo(+b.dataset.i);startAuto();});
+const sliderEl=document.getElementById('slider');sliderEl.addEventListener('mouseenter',stopAuto);sliderEl.addEventListener('mouseleave',startAuto);
+
+const heads=ARTICLES.map(a=>a.t);let hi=0;const hEl=document.getElementById('latestHead');
+if(heads.length){
+  hEl.textContent=heads[0];
+  setInterval(()=>{hEl.classList.add('swap');setTimeout(()=>{hi=(hi+1)%heads.length;hEl.textContent=heads[hi];hEl.classList.remove('swap');},400);},3600);
+}
+
+render();
+</script>
+</body>
+</html>
