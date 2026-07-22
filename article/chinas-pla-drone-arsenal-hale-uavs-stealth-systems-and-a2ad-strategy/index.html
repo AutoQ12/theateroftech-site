@@ -9,7 +9,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="China&#39;s PLA Drone Arsenal: HALE UAVs, Stealth Systems, and A2/AD Strategy">
 <meta property="og:description" content="China&#39;s PLA is developing stealth, supersonic, and HALE UAVs including the Dark Sword and Divine Eagle, posing growing A2/AD threats to U.S. forces in the Indo-Pacific.">
-
+<meta property="og:image" content="/static/images/50/50a13b9221f80343a55cfbcfae6dd05ac801184305c6ca98ab5585380b5af02c.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
 :root{
   --void:#0a0e14;--panel:#10161f;--line-dark:#212c3a;--ink-light:#e9edf2;--ink-dim:#8a98a8;
   --paper:#f6f5f1;--paper-2:#ffffff;--ink:#101418;--ink-soft:#48535f;--line:#e2ded4;
-  --balkans:#ff6b35;--unmanned:#12b3a6;--grid:rgba(120,140,160,.07);
+  --accent-orange:#ff6b35;--unmanned:#12b3a6;--grid:rgba(120,140,160,.07);
   --accent:#e5484d;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -30,9 +30,9 @@ a{color:inherit}
 .command{background:var(--void);color:var(--ink-light);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;border-bottom:1px solid var(--line-dark);position:sticky;top:0;z-index:100}
 .command-bar{max-width:1200px;margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px}
 .brand{display:flex;align-items:baseline;gap:11px}
-.brand-glyph{font-family:'Space Mono',monospace;font-weight:700;font-size:.62rem;color:var(--void);background:var(--balkans);padding:3px 6px;letter-spacing:.05em;position:relative;top:-3px}
+.brand-glyph{font-family:'Space Mono',monospace;font-weight:700;font-size:.62rem;color:var(--void);background:var(--accent-orange);padding:3px 6px;letter-spacing:.05em;position:relative;top:-3px}
 .brand-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:-.025em;color:#fff}
-.brand-name em{font-style:normal;color:var(--balkans)}
+.brand-name em{font-style:normal;color:var(--accent-orange)}
 .back{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.82rem;color:var(--ink-dim);display:flex;align-items:center;gap:8px;transition:.2s}
 .back:hover{color:#fff}
 
@@ -58,6 +58,18 @@ a{color:inherit}
 .sources ul{list-style:none;display:flex;flex-direction:column;gap:8px}
 .sources a{font-family:'Space Mono',monospace;font-size:.78rem;color:var(--ink-soft);word-break:break-all}
 .sources a:hover{color:var(--accent)}
+
+/* RELATED */
+.related{max-width:1200px;margin:56px auto 0;padding:0 28px}
+.related h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;letter-spacing:-.02em;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:24px}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rel-card{background:var(--paper-2);border:1px solid var(--line);padding:18px 18px 20px;display:flex;flex-direction:column;gap:10px;transition:transform .2s,box-shadow .2s,border-color .2s;text-decoration:none}
+.rel-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(16,20,24,.1);border-color:#c9c2b2}
+.rel-chip{font-family:'Space Mono',monospace;font-weight:700;font-size:.6rem;letter-spacing:.1em;padding:3px 8px;color:var(--void);align-self:flex-start}
+.rel-card h3{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.02rem;line-height:1.3;letter-spacing:-.01em}
+.rel-card p{font-size:.92rem;color:var(--ink-soft);line-height:1.55;flex:1}
+.rel-date{font-family:'Space Mono',monospace;font-size:.62rem;color:var(--ink-soft);letter-spacing:.05em}
+@media(max-width:760px){.rel-grid{grid-template-columns:1fr}}
 
 /* FOOTER */
 .foot-zone{background:var(--void);color:var(--ink-dim);margin-top:50px;padding:34px 0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px}
@@ -85,21 +97,26 @@ a{color:inherit}
     </div>
 
     
+    <figure class="story-banner">
+      <img src="/static/images/50/50a13b9221f80343a55cfbcfae6dd05ac801184305c6ca98ab5585380b5af02c.jpg" alt="China&#39;s PLA Drone Arsenal: HALE UAVs, Stealth Systems, and A2/AD Strategy">
+      <figcaption>Source: https://commons.wikimedia.org/w/index.php?curid=30401301</figcaption>
+    </figure>
+    
 
     <div class="story-body">
-      <h2>China Builds Broad Military UAV Portfolio Targeting U.S. Stealth Advantage</h2>
-<p>China's defense industry has developed a wide-ranging portfolio of advanced unmanned aerial systems — including high-altitude surveillance platforms, supersonic stealth drones, and long-range strike vehicles — as the People's Liberation Army seeks to erode U.S. technological advantages in the Indo-Pacific, according to testimony submitted to the U.S.-China Economic and Security Review Commission.</p>
-<p>The assessment, drawing on open-source research into Chinese defense programs, describes an accelerating effort by major Chinese aerospace conglomerates to leverage existing aviation and missile expertise in building sophisticated UAV capabilities across multiple mission categories.</p>
-<h2>HALE Platforms and Anti-Stealth Capabilities</h2>
-<p>Among the systems highlighted is the Shendiao, or "Divine Eagle," a twin-fuselage high-altitude long-endurance UAV developed by the Shenyang Aircraft Design Institute. The platform is reported to carry high-performance anti-stealth radar systems capable of detecting low-observable aircraft, a capability that could directly threaten U.S. stealth platforms operating in contested airspace. Open-source reporting indicated the aircraft completed its first flight in early 2015.</p>
-<p>The Divine Eagle is assessed as a potential enabler of China's anti-access/area-denial strategy, which is designed to complicate U.S. military operations and force projection across the Western Pacific.</p>
-<h2>Supersonic Stealth UAV Under Development</h2>
-<p>Also attributed to the Shenyang institute is the Anjian, known in translation as the "Dark Sword" — a supersonic stealth UAV that was first publicly revealed at an earlier stage of development. The program underscores the PLA's ambition to field unmanned platforms that combine speed and low observability, characteristics traditionally associated only with crewed combat aircraft.</p>
-<h2>Strike Drones Expanding Export and Domestic Roles</h2>
-<p>On the strike side, the Yilong series — comparable in role and weight class to the U.S. MQ-9 Reaper — has been developed for both PLA Air Force service and export. The Xianglong, or "Soar Dragon," a HALE UAV produced by the Guizhou Aviation Aircraft Corporation and designed in Chengdu, was among the earlier systems revealed publicly, first appearing at the Zhuhai Airshow in 2006 before continuing through an extended development cycle.</p>
-<p>The Lijian, a flying-wing stealth combat drone, is separately reported to have achieved development milestones as recently as 2016, according to the commission review.</p>
+      <h2>China's Military UAV Push Targets U.S. Stealth Advantage</h2>
+<p>China has assembled a wide-ranging portfolio of military drones — high-altitude surveillance platforms, supersonic stealth vehicles, long-range strike systems — aimed squarely at eroding U.S. technological advantages in the Indo-Pacific. That's the picture emerging from testimony submitted to the U.S.-China Economic and Security Review Commission, which draws on open-source research into Chinese defense programs.</p>
+<p>The assessment describes major Chinese aerospace conglomerates leveraging existing aviation and missile expertise to push into sophisticated UAV development across multiple mission categories, and doing so at pace.</p>
+<h2>HALE Platforms and Anti-Stealth Radar</h2>
+<p>One of the more consequential systems in the review is the Shendiao — the "Divine Eagle" — a twin-fuselage high-altitude long-endurance UAV built by the Shenyang Aircraft Design Institute. It reportedly carries high-performance anti-stealth radar capable of detecting low-observable aircraft, which would put U.S. stealth platforms at direct risk in contested airspace. Open-source reporting placed its first flight in early 2015.</p>
+<p>The Divine Eagle is assessed as a potential enabler of China's anti-access/area-denial strategy, the architecture designed to complicate U.S. force projection across the Western Pacific.</p>
+<h2>Supersonic Stealth Drone</h2>
+<p>Also out of Shenyang is the Anjian, or "Dark Sword" — a supersonic stealth UAV that surfaced publicly at an earlier stage of development. The program reflects PLA ambitions to put speed and low observability into the same unmanned airframe, a combination previously confined to crewed combat aircraft.</p>
+<h2>Strike Drones for Home Use and Export</h2>
+<p>On the strike side, the Yilong series sits in roughly the same role and weight class as the U.S. MQ-9 Reaper and has been developed for both PLA Air Force service and overseas customers. The Xianglong, or "Soar Dragon" — a HALE UAV produced by Guizhou Aviation Aircraft Corporation and designed in Chengdu — appeared publicly as far back as the 2006 Zhuhai Airshow before working through an extended development cycle.</p>
+<p>The Lijian, a flying-wing stealth combat drone, is separately reported to have hit development milestones as recently as 2016, per the commission review.</p>
 <h2>Why It Matters</h2>
-<p>The breadth of China's unmanned programs — spanning stealth strike, supersonic flight, anti-stealth surveillance, and HALE endurance — reflects a deliberate, multi-vector strategy to contest air dominance without symmetric investment in crewed fifth-generation fighters alone. As the U.S. military expands its own autonomous systems across the Indo-Pacific, including unmanned surface vessels and collaborative combat aircraft, China's parallel drone buildup adds urgency to Washington's force modernization calculus. The commission's findings remain relevant as both powers race to field autonomous systems that could define the character of future high-end conflict.</p>
+<p>The breadth of China's unmanned programs — stealth strike, supersonic flight, anti-stealth surveillance, HALE endurance — reflects a deliberate, multi-vector effort to contest air dominance without betting everything on crewed fifth-generation fighters. As the U.S. military expands its own autonomous systems across the Indo-Pacific, including unmanned surface vessels and collaborative combat aircraft, China's parallel drone buildup adds pressure to Washington's force modernization calculus. The commission's findings carry weight as both powers race to field autonomous systems that could define how a high-end conflict actually unfolds.</p>
     </div>
 
     
@@ -128,6 +145,36 @@ a{color:inherit}
     
   </article>
 </main>
+
+
+<section class="related">
+  <h2>More briefings</h2>
+  <div class="rel-grid">
+    
+    <a class="rel-card" href="/article/chinas-j-35-copies-f-35-hardware-but-misses-the-software-edge-analysts-warn">
+      <span class="rel-chip" style="background:#e5484d">CHINA</span>
+      <h3>China&#39;s J-35 Copies F-35 Hardware but Misses the Software Edge, Analysts Warn</h3>
+      <p>A new analysis argues China&#39;s stealth aviation program has copied the physical form of U.S. fifth-generation fighters but failed to absorb the software-defined adaptability that makes them genuinely lethal.</p>
+      <span class="rel-date">25 JUN 2026</span>
+    </a>
+    
+    <a class="rel-card" href="/article/fiber-optic-fpv-drones-reach-southern-lebanon-challenging-israeli-forces">
+      <span class="rel-chip" style="background:#d99a3c">MIDDLE EAST</span>
+      <h3>Fiber-Optic FPV Drones Reach Southern Lebanon, Challenging Israeli Forces</h3>
+      <p>Hezbollah has put fiber-optic FPV drones into the field in southern Lebanon, lifting a tactic straight from the Ukraine war to strip Israel of its electronic warfare edge.</p>
+      <span class="rel-date">25 JUN 2026</span>
+    </a>
+    
+    <a class="rel-card" href="/article/hezbollah-deploys-fiber-optic-fpv-drones-in-lebanon-exposing-israeli-vulnerabili">
+      <span class="rel-chip" style="background:#d99a3c">MIDDLE EAST</span>
+      <h3>Hezbollah Deploys Fiber-Optic FPV Drones in Lebanon, Exposing Israeli Vulnerabilities</h3>
+      <p>Hezbollah has fielded fiber-optic FPV drones in southern Lebanon that no jammer can stop, catching Israeli forces flat-footed weeks into a renewed conflict.</p>
+      <span class="rel-date">23 JUN 2026</span>
+    </a>
+    
+  </div>
+</section>
+
 
 <footer class="foot-zone">
   <div class="wrap">

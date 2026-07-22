@@ -9,7 +9,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Fiber-Optic FPV Drones Reach Southern Lebanon, Challenging Israeli Forces">
 <meta property="og:description" content="Hezbollah&#39;s fiber-optic FPV drones in southern Lebanon are jamming-proof and inflicting losses on Israeli forces, mirroring Ukraine war drone tactics.">
-
+<meta property="og:image" content="/static/images/2f/2f7917cbfc6eb09c466ebe1c33e2e95f6d282f44d9ea0d3f1493c03c4e2a1ac8.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
 :root{
   --void:#0a0e14;--panel:#10161f;--line-dark:#212c3a;--ink-light:#e9edf2;--ink-dim:#8a98a8;
   --paper:#f6f5f1;--paper-2:#ffffff;--ink:#101418;--ink-soft:#48535f;--line:#e2ded4;
-  --balkans:#ff6b35;--unmanned:#12b3a6;--grid:rgba(120,140,160,.07);
+  --accent-orange:#ff6b35;--unmanned:#12b3a6;--grid:rgba(120,140,160,.07);
   --accent:#d99a3c;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -30,9 +30,9 @@ a{color:inherit}
 .command{background:var(--void);color:var(--ink-light);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;border-bottom:1px solid var(--line-dark);position:sticky;top:0;z-index:100}
 .command-bar{max-width:1200px;margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px}
 .brand{display:flex;align-items:baseline;gap:11px}
-.brand-glyph{font-family:'Space Mono',monospace;font-weight:700;font-size:.62rem;color:var(--void);background:var(--balkans);padding:3px 6px;letter-spacing:.05em;position:relative;top:-3px}
+.brand-glyph{font-family:'Space Mono',monospace;font-weight:700;font-size:.62rem;color:var(--void);background:var(--accent-orange);padding:3px 6px;letter-spacing:.05em;position:relative;top:-3px}
 .brand-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:-.025em;color:#fff}
-.brand-name em{font-style:normal;color:var(--balkans)}
+.brand-name em{font-style:normal;color:var(--accent-orange)}
 .back{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.82rem;color:var(--ink-dim);display:flex;align-items:center;gap:8px;transition:.2s}
 .back:hover{color:#fff}
 
@@ -59,6 +59,18 @@ a{color:inherit}
 .sources a{font-family:'Space Mono',monospace;font-size:.78rem;color:var(--ink-soft);word-break:break-all}
 .sources a:hover{color:var(--accent)}
 
+/* RELATED */
+.related{max-width:1200px;margin:56px auto 0;padding:0 28px}
+.related h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;letter-spacing:-.02em;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:24px}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rel-card{background:var(--paper-2);border:1px solid var(--line);padding:18px 18px 20px;display:flex;flex-direction:column;gap:10px;transition:transform .2s,box-shadow .2s,border-color .2s;text-decoration:none}
+.rel-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(16,20,24,.1);border-color:#c9c2b2}
+.rel-chip{font-family:'Space Mono',monospace;font-weight:700;font-size:.6rem;letter-spacing:.1em;padding:3px 8px;color:var(--void);align-self:flex-start}
+.rel-card h3{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.02rem;line-height:1.3;letter-spacing:-.01em}
+.rel-card p{font-size:.92rem;color:var(--ink-soft);line-height:1.55;flex:1}
+.rel-date{font-family:'Space Mono',monospace;font-size:.62rem;color:var(--ink-soft);letter-spacing:.05em}
+@media(max-width:760px){.rel-grid{grid-template-columns:1fr}}
+
 /* FOOTER */
 .foot-zone{background:var(--void);color:var(--ink-dim);margin-top:50px;padding:34px 0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px}
 .foot-zone .wrap{max-width:1200px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.04em}
@@ -78,26 +90,31 @@ a{color:inherit}
   <article class="story">
     <span class="kicker">Middle East</span>
     <h1>Fiber-Optic FPV Drones Reach Southern Lebanon, Challenging Israeli Forces</h1>
-    <p class="story-deck">Hezbollah has deployed fiber-optic FPV drones in southern Lebanon, replicating Ukrainian battlefield technology to neutralise Israeli electronic warfare advantages.</p>
+    <p class="story-deck">Hezbollah has put fiber-optic FPV drones into the field in southern Lebanon, lifting a tactic straight from the Ukraine war to strip Israel of its electronic warfare edge.</p>
     <div class="story-meta">
       <span>SECTOR · MIDDLE EAST</span>
       <span>PUBLISHED · 2026-06-25</span>
     </div>
 
     
+    <figure class="story-banner">
+      <img src="/static/images/2f/2f7917cbfc6eb09c466ebe1c33e2e95f6d282f44d9ea0d3f1493c03c4e2a1ac8.webp" alt="Fiber-Optic FPV Drones Reach Southern Lebanon, Challenging Israeli Forces">
+      <figcaption>Source: https://commons.wikimedia.org/w/index.php?curid=162840181</figcaption>
+    </figure>
+    
 
     <div class="story-body">
       <h2>Jamming-Proof Drones Alter the Balance in Southern Lebanon</h2>
-<p>A sophisticated class of drone warfare long associated with the battlefields of Ukraine has taken root in southern Lebanon, where Hezbollah has deployed fiber-optic First Person View (FPV) drones against Israeli forces occupying parts of the territory — posing a challenge that conventional electronic countermeasures cannot address.</p>
-<p>Unlike standard radio-frequency-guided drones, these systems trail a physical spool of fiber-optic cable that maintains a hardwired link between operator and aircraft. That direct connection renders them effectively immune to jamming and most electronic warfare tools currently fielded by the Israeli military, fundamentally shifting the threat calculus in a conflict already marked by high-intensity drone exchanges.</p>
-<h2>Technology Transferred from Ukraine Theater</h2>
-<p>Hezbollah's first confirmed fiber-optic drone strike — targeting an Israeli armored vehicle — was captured on video and released in late March 2026, weeks after the group renewed large-scale hostilities on March 2 following the outbreak of the U.S.-Israeli campaign against Iran. Analysts believe the know-how reached Hezbollah via Iran, which is assessed to have acquired or observed the technique through Russia's use of identical systems in Ukraine.</p>
-<p>Knowledge transfer across conflict theaters typically flows through direct training, open-source footage, and battlefield observation — all channels available to Iran's defense establishment. That Iran then passed the capability to its Lebanese proxy represents a documented pattern of technology proliferation that Western and Israeli intelligence services have long monitored but apparently underestimated in this instance.</p>
+<p>Hezbollah has fielded fiber-optic First Person View (FPV) drones against Israeli forces in southern Lebanon — systems that conventional electronic countermeasures simply cannot stop.</p>
+<p>Where standard radio-frequency-guided drones can be jammed, these trail a physical spool of fiber-optic cable that keeps operator and aircraft hardwired together. That connection makes them effectively immune to the jamming tools and electronic warfare systems Israel currently fields, and it has materially changed the threat calculus in a conflict already running hot with drone exchanges.</p>
+<h2>Technology Transferred from the Ukraine Theater</h2>
+<p>Hezbollah's first confirmed fiber-optic drone strike — against an Israeli armored vehicle — was captured on video and released in late March 2026, weeks after the group resumed large-scale hostilities on March 2 following the outbreak of the U.S.-Israeli campaign against Iran. Analysts believe Iran acquired or observed the technique through Russia's use of identical systems in Ukraine, then passed it to its Lebanese proxy — a documented pattern of technology transfer that Western and Israeli intelligence services have long tracked.</p>
+<p>Know-how typically moves across conflict theaters through direct training, open-source footage, and battlefield observation, all channels accessible to Iran's defense establishment.</p>
 <h2>Israel Caught Off Guard</h2>
-<p>The arrival of the technology appears to have exposed a gap in Israeli preparedness. Analysts cited by Defense News noted that Israel's renowned situational awareness of global drone developments made the oversight particularly striking. Hezbollah has compounded the technological advantage with deep familiarity with southern Lebanon's terrain, giving its operators positional benefits that further complicate Israeli countermeasures.</p>
-<p>Israeli forces have sustained equipment losses and personnel pressure as a result, though specific casualty figures were not confirmed in available reporting.</p>
-<h2>Why It Matters</h2>
-<p>The emergence of fiber-optic FPV drones in Lebanon is a textbook example of asymmetric technology proliferation accelerating conflict dynamics across multiple theaters simultaneously. What began as an improvised Ukrainian adaptation to counter Russian electronic warfare has, within roughly two years, reached a non-state actor operating in the Middle East — bypassing the procurement timelines and export controls that normally slow the diffusion of military technology. For Israel and its allies, it underscores an urgent need to develop countermeasures beyond the electromagnetic spectrum, while for the broader defense community it signals that fiber-optic drone tactics are no longer a regional novelty but an established feature of modern irregular warfare.</p>
+<p>The technology's arrival exposed a gap in Israeli preparedness that analysts cited by Defense News found particularly striking, given Israel's reputation for close attention to global drone developments. Hezbollah has compounded the problem with deep familiarity with southern Lebanon's terrain, giving its operators positional advantages that further complicate any Israeli response.</p>
+<p>Israeli forces have taken equipment losses and sustained personnel pressure, though specific casualty figures were not confirmed in available reporting.</p>
+<h2>What It Means Beyond the Immediate Fight</h2>
+<p>What began as an improvised Ukrainian adaptation to counter Russian electronic warfare has, within roughly two years, reached a non-state actor in the Middle East — bypassing the procurement timelines and export controls that normally slow military technology from spreading. For Israel and its allies, the immediate problem is finding effective countermeasures that live outside the electromagnetic spectrum. For the broader defense community, the message is starker: fiber-optic drone tactics are no longer a regional novelty. They're an established feature of modern irregular warfare.</p>
     </div>
 
     
@@ -126,6 +143,36 @@ a{color:inherit}
     
   </article>
 </main>
+
+
+<section class="related">
+  <h2>More briefings</h2>
+  <div class="rel-grid">
+    
+    <a class="rel-card" href="/article/hezbollah-deploys-fiber-optic-fpv-drones-in-lebanon-exposing-israeli-vulnerabili">
+      <span class="rel-chip" style="background:#d99a3c">MIDDLE EAST</span>
+      <h3>Hezbollah Deploys Fiber-Optic FPV Drones in Lebanon, Exposing Israeli Vulnerabilities</h3>
+      <p>Hezbollah has fielded fiber-optic FPV drones in southern Lebanon that no jammer can stop, catching Israeli forces flat-footed weeks into a renewed conflict.</p>
+      <span class="rel-date">23 JUN 2026</span>
+    </a>
+    
+    <a class="rel-card" href="/article/ai-guided-shaheds-ukraine-warns-of-autonomous-strike-drone-targeting-era">
+      <span class="rel-chip" style="background:#d99a3c">MIDDLE EAST</span>
+      <h3>AI-Guided Shaheds: Ukraine Warns of Autonomous Strike Drone Targeting Era</h3>
+      <p>A senior Ukrainian drone warfare advisor says Russia&#39;s Shahed-class loitering munitions are on the verge of selecting and striking targets on their own, with no human in the loop.</p>
+      <span class="rel-date">26 JUN 2026</span>
+    </a>
+    
+    <a class="rel-card" href="/article/turkeys-kizilelma-ucav-completes-crewed-uncrewed-teaming-trials-with-m-346-jet">
+      <span class="rel-chip" style="background:#d99a3c">MIDDLE EAST</span>
+      <h3>Turkey&#39;s Kizilelma UCAV Completes Crewed-Uncrewed Teaming Trials With M-346 Jet</h3>
+      <p>Baykar&#39;s Kizilelma combat drone has flown autonomous formation sorties alongside a Leonardo M-346 trainer jet, putting Turkey in rare company as one of the few nations to have demonstrated crewed-uncrewed teaming in the air.</p>
+      <span class="rel-date">23 JUN 2026</span>
+    </a>
+    
+  </div>
+</section>
+
 
 <footer class="foot-zone">
   <div class="wrap">

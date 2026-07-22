@@ -18,7 +18,7 @@
 :root{
   --void:#0a0e14;--panel:#10161f;--line-dark:#212c3a;--ink-light:#e9edf2;--ink-dim:#8a98a8;
   --paper:#f6f5f1;--paper-2:#ffffff;--ink:#101418;--ink-soft:#48535f;--line:#e2ded4;
-  --balkans:#ff6b35;--unmanned:#12b3a6;--grid:rgba(120,140,160,.07);
+  --accent-orange:#ff6b35;--unmanned:#12b3a6;--grid:rgba(120,140,160,.07);
   --accent:#d99a3c;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -30,9 +30,9 @@ a{color:inherit}
 .command{background:var(--void);color:var(--ink-light);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;border-bottom:1px solid var(--line-dark);position:sticky;top:0;z-index:100}
 .command-bar{max-width:1200px;margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px}
 .brand{display:flex;align-items:baseline;gap:11px}
-.brand-glyph{font-family:'Space Mono',monospace;font-weight:700;font-size:.62rem;color:var(--void);background:var(--balkans);padding:3px 6px;letter-spacing:.05em;position:relative;top:-3px}
+.brand-glyph{font-family:'Space Mono',monospace;font-weight:700;font-size:.62rem;color:var(--void);background:var(--accent-orange);padding:3px 6px;letter-spacing:.05em;position:relative;top:-3px}
 .brand-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:-.025em;color:#fff}
-.brand-name em{font-style:normal;color:var(--balkans)}
+.brand-name em{font-style:normal;color:var(--accent-orange)}
 .back{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.82rem;color:var(--ink-dim);display:flex;align-items:center;gap:8px;transition:.2s}
 .back:hover{color:#fff}
 
@@ -59,6 +59,18 @@ a{color:inherit}
 .sources a{font-family:'Space Mono',monospace;font-size:.78rem;color:var(--ink-soft);word-break:break-all}
 .sources a:hover{color:var(--accent)}
 
+/* RELATED */
+.related{max-width:1200px;margin:56px auto 0;padding:0 28px}
+.related h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;letter-spacing:-.02em;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:24px}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rel-card{background:var(--paper-2);border:1px solid var(--line);padding:18px 18px 20px;display:flex;flex-direction:column;gap:10px;transition:transform .2s,box-shadow .2s,border-color .2s;text-decoration:none}
+.rel-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(16,20,24,.1);border-color:#c9c2b2}
+.rel-chip{font-family:'Space Mono',monospace;font-weight:700;font-size:.6rem;letter-spacing:.1em;padding:3px 8px;color:var(--void);align-self:flex-start}
+.rel-card h3{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.02rem;line-height:1.3;letter-spacing:-.01em}
+.rel-card p{font-size:.92rem;color:var(--ink-soft);line-height:1.55;flex:1}
+.rel-date{font-family:'Space Mono',monospace;font-size:.62rem;color:var(--ink-soft);letter-spacing:.05em}
+@media(max-width:760px){.rel-grid{grid-template-columns:1fr}}
+
 /* FOOTER */
 .foot-zone{background:var(--void);color:var(--ink-dim);margin-top:50px;padding:34px 0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px}
 .foot-zone .wrap{max-width:1200px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.04em}
@@ -78,7 +90,7 @@ a{color:inherit}
   <article class="story">
     <span class="kicker">Middle East</span>
     <h1>AI-Guided Shaheds: Ukraine Warns of Autonomous Strike Drone Targeting Era</h1>
-    <p class="story-deck">A senior Ukrainian drone warfare advisor says the next generation of loitering munitions like Russia&#39;s Shahed will autonomously identify and select their own targets using AI, marking a critical escalation in drone warfare.</p>
+    <p class="story-deck">A senior Ukrainian drone warfare advisor says Russia&#39;s Shahed-class loitering munitions are on the verge of selecting and striking targets on their own, with no human in the loop.</p>
     <div class="story-meta">
       <span>SECTOR · MIDDLE EAST</span>
       <span>PUBLISHED · 2026-06-26</span>
@@ -92,18 +104,16 @@ a{color:inherit}
     
 
     <div class="story-body">
-      <h2>Ukraine's Drone Advisor Warns of AI-Autonomous Strike Drone Era</h2>
-<p>One of Ukraine's foremost drone warfare analysts has issued a stark assessment: the next generation of Shahed-class loitering munitions will be capable of independently identifying, prioritising, and striking targets without human instruction — a development that carries profound implications for conflicts well beyond Eastern Europe, including across the Middle East.</p>
-<p>Serhii 'Flash' Beskrestnov, an advisor to Ukraine's defence ministry on unmanned systems, published the warning this week, arguing that autonomous target selection is not a distant prospect but an imminent reality for the entire class of one-way attack drones.</p>
+      <h2>Ukraine's Drone Advisor Warns Autonomous Strike Era Is Close</h2>
+<p>Serhii 'Flash' Beskrestnov, an advisor to Ukraine's defence ministry on unmanned systems, has a blunt message: the next generation of Shahed-class loitering munitions won't need a human to pick their targets. Publishing his assessment this week, Beskrestnov argues that autonomous target selection isn't a distant prospect — it's an imminent reality for the entire class of one-way attack drones, with consequences that stretch well beyond Eastern Europe into the Middle East.</p>
 <h2>From Pre-Programmed Paths to Fully Autonomous Decision-Making</h2>
-<p>Russia currently fires its domestically produced Shahed derivatives — designated Gerans — in mass salvos against Ukrainian cities, with flight paths loaded before launch. However, Moscow has steadily upgraded these weapons with anti-jamming systems, rear-facing cameras capable of detecting and evading interceptors, and hardware enabling remote human piloting mid-flight.</p>
-<p>Beskrestnov's analysis suggests the logical endpoint of this iterative improvement is a drone that requires no human input at the point of attack — one that can scan a target area, weigh priorities, and commit to a strike autonomously.</p>
+<p>Right now, Russia fires its domestically produced Shahed derivatives — designated Gerans — in mass salvos against Ukrainian cities, flight paths loaded before launch. But Moscow has been steadily upgrading these weapons: anti-jamming systems, rear-facing cameras that can detect and evade interceptors, hardware for remote human piloting mid-flight. Beskrestnov's reading of that trajectory is straightforward. The logical endpoint is a drone that scans a target area, weighs priorities, and commits to a strike with no human input at the moment of attack.</p>
 <h2>Why This Matters for the Middle East and Beyond</h2>
-<p>Iran's original Shahed design has already spread far beyond its borders. Variants and derivatives have appeared in conflicts across the Middle East, used by Houthi forces in Yemen against shipping and Saudi infrastructure, and reportedly transferred to other non-state actors in the region. An AI-guided evolution of this platform would fundamentally alter the threat calculus for regional militaries and naval forces operating in contested airspace.</p>
-<p>The prospect of autonomous strike drones also accelerates pressure on counter-drone developers. German startup Tytan, which is targeting production of 3,000 drone interceptors per month from a new factory, and Finland's border-security consortium — which this week formalised agreements with Nokia Defence and 61N Solutions to field networked counter-drone capabilities on patrol vessels and vehicles — represent the kind of rapid industrial response that analysts say will be essential if autonomous munitions proliferate.</p>
+<p>Iran's original Shahed design has already travelled far. Variants have turned up in conflicts across the Middle East — Houthi forces in Yemen have used them against shipping and Saudi infrastructure, and the platform has reportedly reached other non-state actors in the region. An AI-guided evolution of the same design would reshape the threat calculus for regional militaries and naval forces operating in contested airspace.</p>
+<p>The prospect also piles pressure onto counter-drone developers. German startup Tytan is targeting production of 3,000 drone interceptors per month from a new factory. Finland's border-security consortium this week formalised agreements with Nokia Defence and 61N Solutions to field networked counter-drone capabilities on patrol vessels and vehicles. Both efforts represent the kind of industrial response analysts say will be essential if autonomous munitions spread.</p>
 <h2>The Autonomy Threshold</h2>
-<p>The core concern raised by Beskrestnov's assessment is the removal of the human from the targeting loop entirely. Current international norms and rules of engagement still presuppose some level of human authorisation before a lethal strike. A commercially accessible, mass-produced drone capable of making that decision itself would challenge legal frameworks, escalation management, and air-defence architectures simultaneously.</p>
-<p>For defence planners in the Gulf, Israel, and beyond — regions already contending with Shahed-derived threats — the warning from Kyiv arrives as a direct preview of the threat environment they are likely to face within the next several years.</p>
+<p>The core concern in Beskrestnov's assessment is the removal of the human from the targeting loop entirely. Current international norms and rules of engagement still assume some level of human authorisation before a lethal strike. A commercially accessible, mass-produced drone capable of making that call itself would put pressure on legal frameworks, escalation management, and air-defence architectures all at once.</p>
+<p>For defence planners in the Gulf, Israel, and elsewhere already dealing with Shahed-derived threats, the warning from Kyiv reads as a direct preview of what they're likely to face within the next several years.</p>
     </div>
 
     
@@ -132,6 +142,36 @@ a{color:inherit}
     
   </article>
 </main>
+
+
+<section class="related">
+  <h2>More briefings</h2>
+  <div class="rel-grid">
+    
+    <a class="rel-card" href="/article/fiber-optic-fpv-drones-reach-southern-lebanon-challenging-israeli-forces">
+      <span class="rel-chip" style="background:#d99a3c">MIDDLE EAST</span>
+      <h3>Fiber-Optic FPV Drones Reach Southern Lebanon, Challenging Israeli Forces</h3>
+      <p>Hezbollah has put fiber-optic FPV drones into the field in southern Lebanon, lifting a tactic straight from the Ukraine war to strip Israel of its electronic warfare edge.</p>
+      <span class="rel-date">25 JUN 2026</span>
+    </a>
+    
+    <a class="rel-card" href="/article/hezbollah-deploys-fiber-optic-fpv-drones-in-lebanon-exposing-israeli-vulnerabili">
+      <span class="rel-chip" style="background:#d99a3c">MIDDLE EAST</span>
+      <h3>Hezbollah Deploys Fiber-Optic FPV Drones in Lebanon, Exposing Israeli Vulnerabilities</h3>
+      <p>Hezbollah has fielded fiber-optic FPV drones in southern Lebanon that no jammer can stop, catching Israeli forces flat-footed weeks into a renewed conflict.</p>
+      <span class="rel-date">23 JUN 2026</span>
+    </a>
+    
+    <a class="rel-card" href="/article/turkeys-kizilelma-ucav-completes-crewed-uncrewed-teaming-trials-with-m-346-jet">
+      <span class="rel-chip" style="background:#d99a3c">MIDDLE EAST</span>
+      <h3>Turkey&#39;s Kizilelma UCAV Completes Crewed-Uncrewed Teaming Trials With M-346 Jet</h3>
+      <p>Baykar&#39;s Kizilelma combat drone has flown autonomous formation sorties alongside a Leonardo M-346 trainer jet, putting Turkey in rare company as one of the few nations to have demonstrated crewed-uncrewed teaming in the air.</p>
+      <span class="rel-date">23 JUN 2026</span>
+    </a>
+    
+  </div>
+</section>
+
 
 <footer class="foot-zone">
   <div class="wrap">

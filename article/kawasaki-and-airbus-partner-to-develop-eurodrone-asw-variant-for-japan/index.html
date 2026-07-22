@@ -9,7 +9,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kawasaki and Airbus Partner to Develop Eurodrone ASW Variant for Japan">
 <meta property="og:description" content="Kawasaki and Airbus sign MOU to develop a Eurodrone-based anti-submarine warfare drone for Japan&#39;s navy, blending European airframe with Japanese sensors.">
-
+<meta property="og:image" content="/static/images/e9/e9caef0a37009599a0c5374bd082a66a79d5947063500b340b5ab81bd499ac20.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
 :root{
   --void:#0a0e14;--panel:#10161f;--line-dark:#212c3a;--ink-light:#e9edf2;--ink-dim:#8a98a8;
   --paper:#f6f5f1;--paper-2:#ffffff;--ink:#101418;--ink-soft:#48535f;--line:#e2ded4;
-  --balkans:#ff6b35;--unmanned:#12b3a6;--grid:rgba(120,140,160,.07);
+  --accent-orange:#ff6b35;--unmanned:#12b3a6;--grid:rgba(120,140,160,.07);
   --accent:#4c7df0;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -30,9 +30,9 @@ a{color:inherit}
 .command{background:var(--void);color:var(--ink-light);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;border-bottom:1px solid var(--line-dark);position:sticky;top:0;z-index:100}
 .command-bar{max-width:1200px;margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px}
 .brand{display:flex;align-items:baseline;gap:11px}
-.brand-glyph{font-family:'Space Mono',monospace;font-weight:700;font-size:.62rem;color:var(--void);background:var(--balkans);padding:3px 6px;letter-spacing:.05em;position:relative;top:-3px}
+.brand-glyph{font-family:'Space Mono',monospace;font-weight:700;font-size:.62rem;color:var(--void);background:var(--accent-orange);padding:3px 6px;letter-spacing:.05em;position:relative;top:-3px}
 .brand-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:-.025em;color:#fff}
-.brand-name em{font-style:normal;color:var(--balkans)}
+.brand-name em{font-style:normal;color:var(--accent-orange)}
 .back{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.82rem;color:var(--ink-dim);display:flex;align-items:center;gap:8px;transition:.2s}
 .back:hover{color:#fff}
 
@@ -59,6 +59,18 @@ a{color:inherit}
 .sources a{font-family:'Space Mono',monospace;font-size:.78rem;color:var(--ink-soft);word-break:break-all}
 .sources a:hover{color:var(--accent)}
 
+/* RELATED */
+.related{max-width:1200px;margin:56px auto 0;padding:0 28px}
+.related h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;letter-spacing:-.02em;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:24px}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rel-card{background:var(--paper-2);border:1px solid var(--line);padding:18px 18px 20px;display:flex;flex-direction:column;gap:10px;transition:transform .2s,box-shadow .2s,border-color .2s;text-decoration:none}
+.rel-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(16,20,24,.1);border-color:#c9c2b2}
+.rel-chip{font-family:'Space Mono',monospace;font-weight:700;font-size:.6rem;letter-spacing:.1em;padding:3px 8px;color:var(--void);align-self:flex-start}
+.rel-card h3{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.02rem;line-height:1.3;letter-spacing:-.01em}
+.rel-card p{font-size:.92rem;color:var(--ink-soft);line-height:1.55;flex:1}
+.rel-date{font-family:'Space Mono',monospace;font-size:.62rem;color:var(--ink-soft);letter-spacing:.05em}
+@media(max-width:760px){.rel-grid{grid-template-columns:1fr}}
+
 /* FOOTER */
 .foot-zone{background:var(--void);color:var(--ink-dim);margin-top:50px;padding:34px 0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px}
 .foot-zone .wrap{max-width:1200px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.04em}
@@ -78,29 +90,34 @@ a{color:inherit}
   <article class="story">
     <span class="kicker">Europe</span>
     <h1>Kawasaki and Airbus Partner to Develop Eurodrone ASW Variant for Japan</h1>
-    <p class="story-deck">Kawasaki Heavy Industries and Airbus have signed an MOU to explore an anti-submarine warfare derivative of the Eurodrone MALE UAV tailored for Japan&#39;s maritime requirements.</p>
+    <p class="story-deck">Kawasaki Heavy Industries and Airbus have signed an MOU to study whether the Eurodrone MALE UAV can be turned into an anti-submarine warfare platform shaped around Japan&#39;s Pacific maritime needs.</p>
     <div class="story-meta">
       <span>SECTOR · EUROPE</span>
       <span>PUBLISHED · 2026-06-26</span>
     </div>
 
     
+    <figure class="story-banner">
+      <img src="/static/images/e9/e9caef0a37009599a0c5374bd082a66a79d5947063500b340b5ab81bd499ac20.jpg" alt="Kawasaki and Airbus Partner to Develop Eurodrone ASW Variant for Japan">
+      <figcaption>Source: https://commons.wikimedia.org/w/index.php?curid=424182</figcaption>
+    </figure>
+    
 
     <div class="story-body">
       <h2>Kawasaki and Airbus Sign MOU on Maritime Eurodrone Variant</h2>
 <p>Kawasaki Heavy Industries and Airbus Defence &amp; Space have agreed to jointly examine whether the European U950 Eurodrone medium-altitude long-endurance platform could be adapted into a dedicated maritime surveillance and anti-submarine warfare (ASW) asset for Japan's naval forces.</p>
-<p>The memorandum of understanding, announced on 26 June, establishes a framework for further discussions on designing, developing, and potentially commercialising a Japanese maritime variant of the system. Under the arrangement, a Eurodrone-based platform would be outfitted with Japanese-developed sensors and effectors tailored to ASW missions in the Pacific region, according to FlightGlobal.</p>
+<p>The memorandum of understanding, announced on 26 June, sets up a framework for further talks on designing, developing, and potentially commercialising a Japanese maritime variant of the system. Under the arrangement, a Eurodrone-based platform would carry Japanese-developed sensors and effectors built for ASW missions in the Pacific region, according to FlightGlobal.</p>
 <h2>Strategic Rationale for Both Sides</h2>
-<p>The partnership carries mutual benefits that extend well beyond Japan's immediate operational requirements. Airbus has indicated that the collaboration could generate significant advantages for prospective European naval variants of the Eurodrone as well — an application that several European navies have been eyeing as unmanned maritime patrol capabilities gain strategic urgency.</p>
-<p>For Kawasaki, the arrangement offers a pathway to integrate domestically developed mission systems into a mature Western airframe, potentially accelerating capability delivery for the Japan Maritime Self-Defense Force, which faces intensifying submarine threats in regional waters.</p>
+<p>The partnership carries mutual benefits that reach well beyond Japan's immediate operational needs. Airbus has indicated the collaboration could generate significant advantages for prospective European naval variants of the Eurodrone too — an application several European navies have been eyeing as unmanned maritime patrol capabilities gain strategic urgency.</p>
+<p>For Kawasaki, the arrangement offers a route to integrate domestically developed mission systems into a mature Western airframe, potentially accelerating capability delivery for the Japan Maritime Self-Defense Force, which faces intensifying submarine threats in regional waters.</p>
 <h2>Japan's Growing Role in the Eurodrone Programme</h2>
-<p>Tokyo's engagement with the Eurodrone programme is not new. Japan's Acquisition, Technology &amp; Logistics Agency has held observer status on the project since 2023, and earlier this month extended that arrangement — signalling sustained institutional interest ahead of any formal procurement decisions.</p>
+<p>Tokyo's engagement with the Eurodrone programme isn't new. Japan's Acquisition, Technology &amp; Logistics Agency has held observer status on the project since 2023, and earlier this month extended that arrangement, signalling sustained institutional interest ahead of any formal procurement decisions.</p>
 <p>The core Eurodrone programme remains a four-nation European effort involving France, Germany, Italy, and Spain. India also holds observer status. First flight of a prototype is currently scheduled for 2029, meaning any Japanese maritime derivative would follow a longer development timeline still to be defined through the new MOU process.</p>
-<h2>Broader Context: Europe-Japan Defense Industrial Convergence</h2>
-<p>The agreement reflects a wider trend of European and Indo-Pacific defense industries deepening ties as both regions accelerate rearmament. European defense investment has surged markedly since early 2025, with the EU's €150 billion SAFE loan programme now conditioning major contracts on rapid, bloc-sourced production scale-up, according to Defense News.</p>
-<p>At the same time, Japan has been diversifying its defense partnerships beyond the United States, actively seeking co-development arrangements with European firms across domains ranging from fighter aircraft to unmanned systems.</p>
+<h2>Europe-Japan Defence Industrial Convergence</h2>
+<p>The agreement reflects a wider trend of European and Indo-Pacific defence industries deepening ties as both regions accelerate rearmament. European defence investment has surged markedly since early 2025, with the EU's €150 billion SAFE loan programme now conditioning major contracts on rapid, bloc-sourced production scale-up, according to Defense News.</p>
+<p>Japan, meanwhile, has been diversifying its defence partnerships beyond the United States, actively seeking co-development arrangements with European firms across domains ranging from fighter aircraft to unmanned systems.</p>
 <h2>Why It Matters</h2>
-<p>A successful Eurodrone ASW variant would mark one of the most substantive Europe-Japan defense co-development projects to date, demonstrating that the Eurodrone platform has export and adaptation potential beyond its original four-nation customer base. It would also validate the programme commercially at a critical juncture — before the first prototype has even flown. How quickly the two companies can translate the MOU into concrete design studies will determine whether Japan becomes a genuine partner in shaping the next generation of European unmanned maritime patrol capability.</p>
+<p>A successful Eurodrone ASW variant would be one of the most substantive Europe-Japan defence co-development projects to date, demonstrating that the Eurodrone has export and adaptation potential beyond its original four-nation customer base. It would also give the programme a commercial validation at a critical point — before the first prototype has even flown. How quickly the two companies can turn the MOU into concrete design studies will determine whether Japan becomes a genuine partner in shaping the next generation of European unmanned maritime patrol capability.</p>
     </div>
 
     
@@ -129,6 +146,36 @@ a{color:inherit}
     
   </article>
 </main>
+
+
+<section class="related">
+  <h2>More briefings</h2>
+  <div class="rel-grid">
+    
+    <a class="rel-card" href="/article/poland-acquires-shield-ai-v-bat-drones-for-baltic-sea-naval-operations">
+      <span class="rel-chip" style="background:#4c7df0">EUROPE</span>
+      <h3>Poland Acquires Shield AI V-BAT Drones for Baltic Sea Naval Operations</h3>
+      <p>Poland has contracted California-based Shield AI to supply V-BAT drones to its navy for Baltic Sea operations, with Prime Minister Donald Tusk also revealing an offer for Poland to take a manufacturing role in Shield AI&#39;s autonomous X-BAT fighter jet programme.</p>
+      <span class="rel-date">25 JUN 2026</span>
+    </a>
+    
+    <a class="rel-card" href="/article/european-defence-tech-draws-record-vc-inflows-as-drone-autonomy-trials-advance">
+      <span class="rel-chip" style="background:#4c7df0">EUROPE</span>
+      <h3>European Defence Tech Draws Record VC Inflows as Drone Autonomy Trials Advance</h3>
+      <p>Venture capital into defence technology has topped $12 billion globally, and European start-ups are pulling in a growing share as autonomous drone trials move from PowerPoint to flight hardware.</p>
+      <span class="rel-date">23 JUN 2026</span>
+    </a>
+    
+    <a class="rel-card" href="/article/csg-and-fnss-launch-danube-defence-systems-to-arm-the-balkans">
+      <span class="rel-chip" style="background:#4c7df0">EUROPE</span>
+      <h3>CSG and FNSS Launch Danube Defence Systems to Arm the Balkans</h3>
+      <p>Croatian firm CSG and Turkish manufacturer FNSS have launched a joint venture called Danube Defence Systems to build armoured vehicles, including a medium tank, on European soil for Balkan and regional buyers.</p>
+      <span class="rel-date">23 JUN 2026</span>
+    </a>
+    
+  </div>
+</section>
+
 
 <footer class="foot-zone">
   <div class="wrap">
